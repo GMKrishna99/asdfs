@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { useState } from "react";
-import Navbar from "./components/Navbar";
+import Navigation from "./components/Navbar";
 import JobListings from "./pages/JobListings";
 import ApplicationForm from "./components/ApplicationForm";
 import JobDescriptionPage from "./components/JobDescription";
@@ -25,10 +25,13 @@ function App() {
 
   return (
     <Router>
-      <Navbar />
+      <Navigation />
       <Routes>
         <Route path="/" element={<Homepage />} />
-        <Route path="/login" element={<Login setIsAuthenticated={setIsAuthenticated} />} />
+        <Route
+          path="/login"
+          element={<Login setIsAuthenticated={setIsAuthenticated} />}
+        />
         <Route path="/joblistings" element={<JobListings />} />
         <Route path="/jobapply/:id" element={<ApplicationForm />} />
         <Route path="/jobdescription/:id" element={<JobDescriptionPage />} />
@@ -43,7 +46,11 @@ function App() {
         <Route
           path="/applicants"
           element={
-            isAuthenticated ? <JobApplicants /> : <Navigate to="/getapplicant" replace />
+            isAuthenticated ? (
+              <JobApplicants />
+            ) : (
+              <Navigate to="/getapplicant" replace />
+            )
           }
         />
 
