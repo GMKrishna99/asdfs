@@ -5,7 +5,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import { useState } from "react";
-import Navigation from "./components/Navbar";
+import NavBar from "./components/Navbar";
 import JobListings from "./pages/JobListings";
 import ApplicationForm from "./components/ApplicationForm";
 import JobDescriptionPage from "./components/JobDescription";
@@ -25,7 +25,7 @@ function App() {
 
   return (
     <Router>
-      <Navigation />
+      <NavBar />
       <Routes>
         <Route path="/" element={<Homepage />} />
         <Route

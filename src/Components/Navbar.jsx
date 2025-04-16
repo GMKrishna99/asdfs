@@ -1,7 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 
-const Navigation = () => {
+const NavBar = () => {
   const navigate = useNavigate();
   const [isAuthenticated, setIsAuthenticated] = useState(false);
 
@@ -119,4 +119,4 @@ const Navigation = () => {
   );
 };
 
-export default Navigation;
+export default NavBar;
